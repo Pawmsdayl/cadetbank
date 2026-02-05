@@ -7,24 +7,31 @@ import 'package:cadetbank/presentation/screens/login/widgets/login_logo.dart';
 import 'package:cadetbank/presentation/screens/registration/widgets/registration_form.dart';
 import 'package:flutter/material.dart';
 
-class RegistrationScreen extends StatelessWidget {
+class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
 
   @override
+  State<RegistrationScreen> createState() => _RegistrationScreenState();
+}
+
+class _RegistrationScreenState extends State<RegistrationScreen> {
+  final _formKey = GlobalKey<FormState>();
+  
+  @override
   Widget build(BuildContext context) => Scaffold(
-    body: const Center(
+    body: Center(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: Dimens.s20),
+        padding: const EdgeInsets.symmetric(horizontal: Dimens.s20),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(height: Dimens.s100),
+            const SizedBox(height: Dimens.s100),
             
-            LoginLogo(),
+            const LoginLogo(),
             
-            SizedBox(height: Dimens.s20),
+            const SizedBox(height: Dimens.s20),
             
-            RegistrationForm(),
+            RegistrationForm(formKey: _formKey),
           ],
         ),
       ),
@@ -40,7 +47,9 @@ class RegistrationScreen extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(Routes.home);
+                if (_formKey.currentState!.validate()) {
+                  Navigator.of(context).pushNamed(Routes.home);
+                }
               },
               style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
                 backgroundColor: const WidgetStatePropertyAll(AppColors.green2BDB8F),
