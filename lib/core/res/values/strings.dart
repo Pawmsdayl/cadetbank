@@ -3,6 +3,7 @@ class Strings {
   const Strings._();
 
   // E
+  static const String email = "Email";
   static const String emailHint = "Enter your email address";
 
   // G
@@ -16,6 +17,7 @@ class Strings {
   static const String login = "Login";
 
   // M
+  static const String mobileNumber = "Mobile Number";
   static const String mobileNumberHint = "Enter mobile number";
 
   // N
@@ -24,6 +26,9 @@ class Strings {
   // P
   static const String password = "Password";
   static const String passwordHint = "Enter password";
+
+  // R
+  static const String register = "Register";
 
   // S
   static const String startAnAccount = "Start an account";
