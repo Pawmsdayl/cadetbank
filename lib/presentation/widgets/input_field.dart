@@ -21,6 +21,7 @@ class InputField extends StatefulWidget {
   final bool autoFocus;
   final void Function()? onEditingComplete;
   final Widget? suffixIcon;
+  final String? Function(String?)? validator;
 
   const InputField({
     super.key,
@@ -41,6 +42,7 @@ class InputField extends StatefulWidget {
     this.autoFocus = false,
     this.onEditingComplete,
     this.suffixIcon,
+    this.validator,
   });
 
   @override
@@ -111,6 +113,7 @@ class _InputFieldState extends State<InputField> {
                   hintStyle: Theme.of(context).textTheme.bodyMedium,
                   contentPadding: _contentPadding,
                 ),
+                validator: widget.validator,
               ),
             ],
           ),
