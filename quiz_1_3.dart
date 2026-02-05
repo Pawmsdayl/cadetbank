@@ -9,6 +9,6 @@ void main() {
   String str1 = "  ";
   String str2 = "not empty";
   
-  print("'$str1' isBlankOrEmpty: " + isBlankOrEmpty(str1).toString());
-  print("'$str2' isBlankOrEmpty: " + isBlankOrEmpty(str2).toString());
+  print("'$str1' isBlankOrEmpty: ${isBlankOrEmpty(str1)}");
+  print("'$str2' isBlankOrEmpty: ${isBlankOrEmpty(str2)}");
 }
