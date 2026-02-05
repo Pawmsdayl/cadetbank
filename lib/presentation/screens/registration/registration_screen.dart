@@ -40,7 +40,7 @@ class RegistrationScreen extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(Routes.login);
+                Navigator.of(context).pushNamed(Routes.home);
               },
               style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
                 backgroundColor: const WidgetStatePropertyAll(AppColors.green2BDB8F),
